@@ -109,7 +109,7 @@ bool CheckPerfectNumber(int number) {
 			sum += i;
 		}
 	}
-	return sum;
+	return number == sum;
 }
 void printresult(int number) {
 	if (CheckPerfectNumber (number))
@@ -121,4 +121,79 @@ int main() {
 	printresult(readposstivenumber("plasr enter your number"));
 }
 */
-//#04/2		
+//#04/2	
+/*
+int readposstivenumber(string massg) {
+	int number = 0;
+	do {
+		cout << massg << endl;
+		cin >> number;
+	} while (number <= 0);
+	return number;
+}
+bool CheckPerfectNumber(int number) {
+	int sum = 0;
+	for (int i = 1; i < number; i++)
+	{
+		if (number % i == 0) {
+			sum += i;
+		}
+	}
+	return number == sum;
+}
+void PrintPerfectNumbersFrom1ToN(int N) {
+	for (int i = 1; i <= N; i++) {
+		if (CheckPerfectNumber(i)) {
+			cout << i << endl;
+		}
+	}
+}
+int main() {
+	PrintPerfectNumbersFrom1ToN(readposstivenumber(("plasr enter your number")));
+}
+*/
+//#05/2
+/*
+int readposstivenumber(string massg) {
+	int number = 0;
+	do {
+		cout << massg << endl;
+		cin >> number;
+	} while (number <= 0);
+	return number;
+}
+void PrintReversedNumber(int number) {
+	int reminder = 0;
+	while (number > 0) {
+		reminder = number % 10;
+		cout << reminder << endl;
+		number /= 10;
+	}
+}
+int main() {
+	PrintReversedNumber(readposstivenumber("plasr enter your number"));
+}
+
+*/
+//#06/2
+int readposstivenumber(string massg) {
+	int number = 0;
+	do {
+		cout << massg << endl;
+		cin >> number;
+	} while (number <= 0);
+	return number;
+}
+void PrintReversedNumber(int number) {
+	int sum = 0;
+	int reminder = 0;
+	while (number > 0) {
+		reminder = number % 10;
+		number /= 10;
+		sum += reminder;
+	}
+	cout << sum << endl;
+}
+int main() {
+	PrintReversedNumber(readposstivenumber("plasr enter your number")); 
+}
