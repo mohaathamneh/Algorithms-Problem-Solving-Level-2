@@ -176,6 +176,7 @@ int main() {
 
 */
 //#06/2
+/*
 int readposstivenumber(string massg) {
 	int number = 0;
 	do {
@@ -195,5 +196,62 @@ void PrintReversedNumber(int number) {
 	cout << sum << endl;
 }
 int main() {
-	PrintReversedNumber(readposstivenumber("plasr enter your number")); 
+	PrintReversedNumber(readposstivenumber("plasr enter your number"));
 }
+
+*/
+//#07/2
+/*
+int readposstivenumber(string massg) {
+	int number = 0;
+	do {
+		cout << massg << endl;
+		cin >> number;
+	} while (number <= 0);
+	return number;
+}
+void ReverseNumber(int number) {
+	int reminder = 0;
+	int number2 = 0;
+	while (number > 0) {
+		reminder = number % 10;
+		number /= 10;
+		number2 = number2 * 10 + reminder;
+	}
+	cout << number2 << endl;
+}
+int main() {
+	ReverseNumber(readposstivenumber("plasr enter your number"));
+}
+
+*/
+//#08/2
+int readposstivenumber(string massg) {
+	int number = 0;
+	do {
+		cout << massg << endl;
+		cin >> number;
+	} while (number <= 0);
+	return number;
+}
+int ReverseNumber(short DigitToCheck ,int number) {
+	int reminder = 0;
+	int freqCount = 0;
+	while (number > 0) {
+		reminder = number % 10;
+		number /= 10;
+		if (reminder == DigitToCheck) {
+			freqCount++;
+		}
+	}
+	return freqCount;
+}
+int main() {
+		int number = readposstivenumber("Please enter the main number:");
+		short DigitToCheck = readposstivenumber("Please enter the digit to check:");
+
+		int frequency = ReverseNumber(DigitToCheck, number);
+
+		cout << "Digit " << DigitToCheck << " Frequency is " << frequency << " Time" << endl;
+	}
+
